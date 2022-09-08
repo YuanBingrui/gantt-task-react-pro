@@ -5,7 +5,10 @@
   "author": "Xiaobaijun",
   "homepage": "https://github.com/YuanBingrui/gantt-task-react-pro",
   "license": "MIT",
-  "repository": "YuanBingrui/gantt-task-react-pro",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuanBingrui/floating-ball.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -62,5 +65,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
