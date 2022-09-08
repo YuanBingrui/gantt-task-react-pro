@@ -1,22 +1,22 @@
-# gantt-task-react
+# gantt-task-react-pro
 
-## Interactive Gantt Chart for React with TypeScript.
+## fork from [gantt-task-react](https://github.com/MaTeMaTuK/gantt-task-react).
 
 ![example](https://user-images.githubusercontent.com/26743903/88215863-f35d5f00-cc64-11ea-81db-e829e6e9b5c8.png)
 
-## [Live Demo](https://matematuk.github.io/gantt-task-react/)
+## [Live Demo](https://matematuk.github.io/gantt-task-react-pro/)
 
 ## Install
 
 ```
-npm install gantt-task-react
+npm install gantt-task-react-pro
 ```
 
 ## How to use it
 
 ```javascript
-import { Gantt, Task, EventOption, StylingOption, ViewMode, DisplayOption } from 'gantt-task-react';
-import "gantt-task-react/dist/index.css";
+import { Gantt, Task, EventOption, StylingOption, ViewMode, DisplayOption } from 'gantt-task-react-pro';
+import "gantt-task-react-pro/dist/index.css";
 
 let tasks: Task[] = [
     {
