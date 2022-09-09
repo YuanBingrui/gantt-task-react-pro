@@ -18,6 +18,7 @@ jobs:
 
       - name: NPM Publish
         run: |
+          npm version patch
           if [ -e package-lock.json ]; then
           npm ci
           else
