@@ -18,12 +18,12 @@ jobs:
 
       - name: NPM Publish
         run: |
-          npm version patch
           if [ -e package-lock.json ]; then
           npm ci
           else
           npm i
           fi
+          npm version patch
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
