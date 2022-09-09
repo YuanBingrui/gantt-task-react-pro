@@ -16,13 +16,15 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
 
-      - name: NPM Publish
+      - name: install and build
         run: |
           if [ -e package-lock.json ]; then
           npm ci
           else
           npm i
           fi
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: publish
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          tag: ${{ steps.get_version.outputs.VERSION }}
