@@ -1,4 +1,4 @@
-name: Publish Package to npmjs
+name: Publish Package to NPM
 
 on:
   release:
@@ -6,25 +6,29 @@ on:
 
 jobs:
   release:
-    name: publish
+    name: Publish to NPM
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Install Node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
 
-      - name: install and build
+      - name: Install dependencies
         run: |
           if [ -e package-lock.json ]; then
           npm ci
           else
           npm i
           fi
-      - name: publish
-      - uses: JS-DevTools/npm-publish@v1
+
+      - name: Publish to NPM
+        uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
           tag: ${{ steps.get_version.outputs.VERSION }}
